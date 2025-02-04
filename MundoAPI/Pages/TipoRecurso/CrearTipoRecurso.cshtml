@@ -1,0 +1,30 @@
+﻿@page "crearTipoRecurso"
+@model MundoAPI.Pages.TipoRecurso.CrearTipoRecursoModel
+@{
+    ViewData["Title"] = "Crear Tipo Recurso";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre del Recurso</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Abreviatura">Abreviatura</label>
+        <input type="text" class="form-control" id="Abreviatura" name="Abreviatura" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Renovable">¿Es Renovable?</label>
+        <select class="form-control" id="Renovable" name="Renovable">
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Crear Recurso</button>
+    <a href="@Url.Page("/TipoRecurso/TipoRecurso")" class="btn btn-secondary">Cancelar</a>
+</form>

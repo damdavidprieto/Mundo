@@ -1,0 +1,26 @@
+﻿@page "/creartipogobierno"
+@model CrearTioGobiernoModel
+@{
+    ViewData["Title"] = "Crear Tipo de Gobierno";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+
+<div class="container">
+    <form method="post">
+        <div class="form-group mb-4">
+            <label for="Nombre" class="form-label">Nombre del Tipo de Gobierno</label>
+            <input type="text" id="Nombre" name="NuevoTipoGobierno.Nombre" class="form-control" required placeholder="Ej. Democracia, Monarquía..." />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Descripcion" class="form-label">Descripción del Tipo de Gobierno</label>
+            <textarea id="Descripcion" name="NuevoTipoGobierno.Descripcion" class="form-control" rows="4" placeholder="Describa brevemente este tipo de gobierno..." required></textarea>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Crear Tipo de Gobierno</button>
+            <a href="/tipogobiernos" class="btn btn-secondary btn-lg">Atrás</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿@page "/recursos"
+@model MundoAPI.Pages.TipoRecurso.TipoRecursoModel
+@{
+    ViewData["Title"] = "Listado de Tipos de Recursos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Botón para crear un nuevo recurso -->
+<a href="@Url.Page("/TipoRecurso/CrearTipoRecurso")" class="btn btn-primary mb-3">Crear Recurso Natural</a>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Abreviatura</th>
+            <th>Renovable</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recurso in Model.Recursos)
+        {
+            <tr>
+                <td>@recurso.Nombre</td>
+                <td>@recurso.Abreviatura</td>
+                <td>@(recurso.Renovable ? "Sí" : "No")</td>
+                <td>
+                    <!-- Enlace para redirigir a la página de editar recurso -->
+                    <a href="@Url.Page("/TipoRecurso/EditarTipoRecurso", new { id = recurso.Id })" class="btn btn-info">Editar</a>
+
+                    <!-- Formulario para eliminar recurso -->
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@recurso.Id" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este recurso natural?');">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

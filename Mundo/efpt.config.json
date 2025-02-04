@@ -1,0 +1,93 @@
+﻿{
+   "CodeGenerationMode": 5,
+   "ContextClassName": "MundoContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Mundo",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Ciudades]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Continentes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Estados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Hemisferios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Idiomas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Idiomas_Estados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Personas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Provincia_Resursos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Provincias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Recursos_Naturales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tipos_Gobiernos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tipos_Monedas]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}

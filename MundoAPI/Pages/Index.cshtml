@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Listado de Estados";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Continente</th>
+            <th>Área</th>
+            <th>Capital</th>
+            <th>ISO</th>
+            <th>Fecha de Creación</th>
+            <th>Moneda</th>
+            <th>Tipo de Gobierno</th>
+            <th>Horientazión</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estado in @Model.Estados)
+        {
+            <tr>
+                <td>@estado.Nombre</td>
+                <td>@estado.IdContinenteNavigation?.Nombre</td> <!-- Asegúrate de que Continente tiene un campo "Nombre" -->
+                <td>@estado.Area</td>
+                <td>@estado.IdCapitalNavigation?.Nombre</td> <!-- Asegúrate de que Ciudad tiene un campo "Nombre" -->
+                <td>@estado.Iso</td>
+                <td>@estado.FechaCreacion.ToString("yyyy-MM-dd")</td> <!-- Formateo de fecha -->
+                <td>@estado.IdTipoMonedaNavigation?.Moneda</td>
+                <td>@estado.IdTipoGobiernoNavigation?.Nombre</td> <!-- Asegúrate de tener un tipo de gobierno descriptivo -->
+                <td>@estado.IdContinenteNavigation?.IdHemisferioNavigation?.Nombre</td>
+                <td>
+                    <!-- Enlace para redirigir a la página de detalles -->
+                    <a href="@Url.Page("/EstadoDetalle", new { id = estado.Id })" class="btn btn-info">Ver Detalles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

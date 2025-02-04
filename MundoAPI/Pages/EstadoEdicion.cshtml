@@ -1,0 +1,80 @@
+﻿@page "{id:int}"
+@model MundoAPI.Pages.EstadoEdicionModel
+@{
+    ViewData["Title"] = "Detalle del Estado";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.Estado != null)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Estado.Nombre</h5>
+            <p><strong>Id:</strong> @Model.Estado.Id</p>
+            <p><strong>Continente:</strong> @Model.Estado.IdContinenteNavigation?.Nombre</p>
+            <p><strong>Área:</strong> @Model.Estado.Area</p>
+            <p><strong>Capital:</strong> @Model.Estado.IdCapitalNavigation?.Nombre</p>
+            <p><strong>ISO:</strong> @Model.Estado.Iso</p>
+            <p><strong>Fecha de Creación:</strong> @Model.Estado.FechaCreacion.ToString("yyyy-MM-dd")</p>
+            <p><strong>Moneda:</strong> @Model.Estado.IdTipoMonedaNavigation?.Moneda</p>
+            <p><strong>Tipo de Gobierno:</strong> @Model.Estado.IdTipoGobiernoNavigation?.Nombre</p>
+            <p><strong>Hemisferio:</strong> @Model.Estado.IdContinenteNavigation?.IdHemisferioNavigation?.Nombre</p>
+
+            <hr>
+            <h5>Provincias</h5>
+            @if (Model.Estado.Provincia != null && Model.Estado.Provincia.Any())
+            {
+                <div class="list-group">
+                    @foreach (var provincia in Model.Estado.Provincia)
+                    {
+                        <div class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6><strong>@provincia.Nombre</strong></h6>
+                                    <p><strong>Área:</strong> @provincia.Area.ToString("N2") km²</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Capital:</strong> @provincia.IdCapitalProvinciaNavigation?.Nombre</p>
+                                    <p><strong>Fecha de Creación:</strong> @provincia.IdCapitalProvinciaNavigation?.FechaCreacion?.ToString("yyyy-MM-dd")</p>
+                                    <p><strong>Tipo de Gobierno Local:</strong> @provincia.IdCapitalProvinciaNavigation?.TipoGobiernoLocal</p>
+                                    <p><strong>Zona Horaria:</strong> @provincia.IdCapitalProvinciaNavigation?.ZonaHoraria</p>
+                                </div>
+                            </div>
+
+                            <!-- Mostrar los recursos naturales de la provincia -->
+                            <h6><strong>Recursos Naturales:</strong></h6>
+                            @if (provincia.ProvinciaResursos != null && provincia.ProvinciaResursos.Any())
+                            {
+                                <ul>
+                                    @foreach (var recurso in provincia.ProvinciaResursos)
+                                    {
+                                        <li>@recurso.IdRecursoNaturalNavigation?.Nombre</li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>No se encontraron recursos naturales para esta provincia.</p>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>No se encontraron provincias para este estado.</p>
+            }
+
+            <!-- Botón para editar (redirige a la página de edición) -->
+            <a href="@Url.Page("/EstadoEdicion", new { id = Model.Estado.Id })" class="btn btn-warning">Editar</a>
+
+            <!-- Botón para volver al listado -->
+            <a href="@Url.Page("/Index")" class="btn btn-primary">Volver al listado</a>
+        </div>
+    </div>
+}
+else
+{
+    <p>No se encontró el estado.</p>
+}

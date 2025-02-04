@@ -1,0 +1,26 @@
+﻿@page "/editarTipogobierno/{id}"
+@model EditarTipoGobiernoModel
+@{
+    ViewData["Title"] = "Editar Tipo de Gobierno";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+
+<div class="container">
+    <form method="post">
+        <div class="form-group mb-4">
+            <label for="Nombre" class="form-label">Nombre del Tipo de Gobierno</label>
+            <input type="text" id="Nombre" name="TipoGobierno.Nombre" class="form-control" value="@Model.TipoGobierno.Nombre" readonly />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Descripcion" class="form-label">Descripción del Tipo de Gobierno</label>
+            <textarea id="Descripcion" name="TipoGobierno.Descripcion" class="form-control" rows="4" required>@Model.TipoGobierno.Descripcion</textarea>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Guardar Cambios</button>
+            <a href="/tipogobiernos" class="btn btn-secondary btn-lg">Atrás</a>
+        </div>
+    </form>
+</div>

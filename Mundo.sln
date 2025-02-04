@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Mundo\Infrastructure.csproj", "{3A4B8487-F15F-4873-B040-D0C890FAABE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundoAPI", "MundoAPI\MundoAPI.csproj", "{A8C0FB73-47C2-491F-8FAC-8775CB7AD0E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A4B8487-F15F-4873-B040-D0C890FAABE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4B8487-F15F-4873-B040-D0C890FAABE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4B8487-F15F-4873-B040-D0C890FAABE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4B8487-F15F-4873-B040-D0C890FAABE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8C0FB73-47C2-491F-8FAC-8775CB7AD0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C0FB73-47C2-491F-8FAC-8775CB7AD0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C0FB73-47C2-491F-8FAC-8775CB7AD0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C0FB73-47C2-491F-8FAC-8775CB7AD0E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEDDF3A5-C9F8-49CF-8CE4-BE84F841F4BF}
+	EndGlobalSection
+EndGlobal

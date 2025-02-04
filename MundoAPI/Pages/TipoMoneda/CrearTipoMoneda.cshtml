@@ -1,0 +1,32 @@
+﻿@page
+@model MundoAPI.Pages.TipoMoneda.CrearTipoMonedaModel
+@{
+    ViewData["Title"] = "Crear Tipo de Moneda";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Formulario para crear un nuevo tipo de moneda -->
+<form method="post">
+    <div class="form-group">
+        <label for="Moneda">Moneda</label>
+        <input type="text" id="Moneda" name="Moneda" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Iso">ISO</label>
+        <input type="text" id="Iso" name="Iso" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Simbolo">Símbolo</label>
+        <input type="text" id="Simbolo" name="Simbolo" class="form-control" required />
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success">Crear</button>
+        <a href="@Url.Page("/TipoMoneda/TipoMoneda")" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+

@@ -1,0 +1,42 @@
+﻿@page "/tipomoneda"
+@model MundoAPI.Pages.TipoMoneda.TipoMonedaModel
+@{
+    ViewData["Title"] = "Listado de Tipos de Moneda";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Botón para redirigir a la página de crear tipo de moneda -->
+<a href="@Url.Page("/TipoMoneda/CrearTipoMoneda")" class="btn btn-primary mb-3">Crear Tipo de Moneda</a>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Moneda</th>
+            <th>ISO</th>
+            <th>Símbolo</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tipoMoneda in Model.TiposMoneda)
+        {
+            <tr>
+                <td>@tipoMoneda.Moneda</td>
+                <td>@tipoMoneda.Iso</td>
+                <td>@tipoMoneda.Simbolo</td>
+                <td>@tipoMoneda.FechaCreacion.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <!-- Enlace para redirigir a la página de detalles del tipo de moneda -->
+                    <a href="@Url.Page("/TipoMoneda/EditarTipoMoneda", new { id = tipoMoneda.Id })" class="btn btn-info">Editar</a>
+
+                    <!-- Botón de Eliminar -->
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@tipoMoneda.Id" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este tipo de moneda?');">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
