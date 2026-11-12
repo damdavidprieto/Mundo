@@ -1,11 +1,11 @@
 # 🌎 Mundo: Full-Stack Web App (.NET 9)
 
-![Status: Research](https://img.shields.io/badge/Status-Research%20%2F%20Snapshot-blue?style=flat-square)
+[![CI](https://github.com/damdavidprieto/Mundo/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damdavidprieto/Mundo/actions/workflows/dotnet.yml)
 ![Tech: .NET 9](https://img.shields.io/badge/Stack-.NET%209-512bd4?style=flat-square)
 ![Stack: Razor Pages](https://img.shields.io/badge/UI-Razor%20Pages-green?style=flat-square)
 ![Database: SQL Server](https://img.shields.io/badge/DB-SQL%20Server-red?style=flat-square)
 
-> **Nota de Archivo**
+> **Sobre este proyecto**
 > Este repositorio constituye un ejemplo de aplicación web moderna desarrollada con el último stack de **.NET 9**. Se conserva como parte de un portfolio de ingeniería de software para demostrar competencias en el desarrollo de aplicaciones web server-side y modelado de datos.
 
 ---
@@ -40,6 +40,14 @@ Para ejecutar este proyecto en un entorno de desarrollo:
     cd MundoAPI
     dotnet run
     ```
+
+## 🧪 Tests
+
+Los tests unitarios (xUnit, EF Core InMemory) se ejecutan en cada push con GitHub Actions:
+
+```bash
+dotnet test
+```
 
 ---
 *Este repositorio es un testimonio de ingeniería aplicada a soluciones web modernas y eficientes.*
