@@ -45,8 +45,8 @@ public class TipoMonedaTests
     {
         using var context = TestSupport.CreateContext();
         context.TiposMonedas.AddRange(
-            new TiposMoneda { Moneda = "Euro", Iso = "EUR" },
-            new TiposMoneda { Moneda = "Yen", Iso = "JPY" });
+            new TiposMoneda { Moneda = "Euro", Iso = "EUR", Simbolo = "E" },
+            new TiposMoneda { Moneda = "Yen", Iso = "JPY", Simbolo = "Y" });
         await context.SaveChangesAsync();
 
         var page = new TipoMonedaModel(context);
@@ -59,7 +59,7 @@ public class TipoMonedaTests
     public async Task Delete_removes_an_existing_currency()
     {
         using var context = TestSupport.CreateContext();
-        var moneda = new TiposMoneda { Moneda = "Euro", Iso = "EUR" };
+        var moneda = new TiposMoneda { Moneda = "Euro", Iso = "EUR", Simbolo = "E" };
         context.TiposMonedas.Add(moneda);
         await context.SaveChangesAsync();
 

@@ -10,7 +10,12 @@ public class EstadoEdicionTests
 {
     private static async Task<int> SeedEstadoAsync(MundoContext context)
     {
-        var estado = new Estado { Nombre = "Francia", Iso = "FR", Area = 551695m, IdContinente = 1 };
+        // The relation to the continent is required, so the Include() in OnGet needs a real row.
+        var continente = new Continente { Nombre = "Europa", Abreviatura = "EU", IdHemisferio = 1 };
+        context.Continentes.Add(continente);
+        await context.SaveChangesAsync();
+
+        var estado = new Estado { Nombre = "Francia", Iso = "FR", Area = 551695m, IdContinente = continente.Id };
         context.Estados.Add(estado);
         await context.SaveChangesAsync();
         return estado.Id;
